@@ -25,6 +25,7 @@
 #ifndef TIMESYNC_TIMESYNC_H_
 #define TIMESYNC_TIMESYNC_H_
 
+#include <memory>
 #include <thread>
 #include "comm_protocol.h"
 #include "comm_device.h"
@@ -99,7 +100,7 @@ class TimeSync {
   void* client_data_;
 
   volatile uint8_t fsm_state_;
-  std::chrono::steady_clock::time_point transfer_time_; 
+  std::chrono::steady_clock::time_point transfer_time_;
   void FsmTransferState(uint8_t new_state);
   void FsmOpenDev();
   void FsmPrepareDev();
